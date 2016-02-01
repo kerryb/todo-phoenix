@@ -9,11 +9,4 @@ config :todo_phoenix_2, TodoPhoenix_2.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :todo_phoenix_2, TodoPhoenix_2.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "todo_phoenix_2_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+import_config "test.database.exs"

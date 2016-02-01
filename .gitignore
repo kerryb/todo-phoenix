@@ -24,4 +24,4 @@ erl_crash.dump
 /config/prod.secret.exs
 
 # Allow developer-specific development database config
-/config/dev.database.exs
+/config/*.database.exs
