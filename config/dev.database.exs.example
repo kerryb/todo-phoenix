@@ -1,0 +1,10 @@
+use Mix.Config
+
+# Modify to suit your local installation, and save as config/dev.database.exs
+config :todo_phoenix_2, TodoPhoenix_2.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "todo_phoenix_2_dev",
+  hostname: "localhost",
+  pool_size: 10

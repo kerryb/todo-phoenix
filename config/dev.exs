@@ -32,11 +32,4 @@ config :logger, :console, format: "[$level] $message\n"
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :todo_phoenix_2, TodoPhoenix_2.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "kerry",
-  password: "",
-  database: "todo_phoenix_2_dev",
-  hostname: "localhost",
-  pool_size: 10
+import_config "dev.database.exs"
