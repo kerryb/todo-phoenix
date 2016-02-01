@@ -7,6 +7,7 @@ defmodule TodoPhoenix_2.Mixfile do
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+     preferred_cli_env: ["white_bread.run": :test],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
@@ -39,6 +40,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:cowboy, ">= 0.0.0"},
       {:gettext, ">= 0.0.0"},
       {:postgrex, ">= 0.0.0"},
+      {:white_bread, ">= 0.0.0", only: :test, app: false},
     ]
   end
 
