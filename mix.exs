@@ -38,6 +38,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:phoenix_live_reload, ">= 0.0.0", only: :dev},
 
       {:cowboy, ">= 0.0.0"},
+      {:ex_machina, ">= 0.0.0", only: :test},
       {:gettext, ">= 0.0.0"},
       {:postgrex, ">= 0.0.0"},
       {:white_bread, ">= 0.0.0", only: :test, app: false},
