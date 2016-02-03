@@ -28,4 +28,6 @@ config :phoenix, :generators,
   migration: true,
   binary_id: false
 
-config :hound, driver: "phantomjs"
+if Mix.env == :test do
+  config :hound, driver: "phantomjs"
+end

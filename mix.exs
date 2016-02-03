@@ -49,9 +49,9 @@ defmodule TodoPhoenix_2.Mixfile do
       {:phoenix_live_reload, ">= 0.0.0", only: :dev},
 
       {:cowboy, ">= 0.0.0"},
-      {:ex_machina, ">= 0.0.0", only: :test},
+      {:ex_machina, ">= 0.0.0", only: :test, app: false},
       {:gettext, ">= 0.0.0"},
-      {:hound, ">= 0.0.0"},
+      {:hound, ">= 0.0.0", only: :test},
       {:postgrex, ">= 0.0.0"},
       {:white_bread, ">= 0.0.0", only: :test, app: false},
     ]
