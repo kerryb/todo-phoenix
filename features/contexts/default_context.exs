@@ -41,7 +41,7 @@ defmodule TodoPhoenix_2.TodoContext do
 
   then_ ~r/^I can see the items$/, fn state ->
     item = Repo.one Item
-    assert item.text == "Do a thing"
+    assert String.contains?(visible_page_text, item.text), "Couldn't find '#{item.text}' on page"
     {:ok, state}
   end
 end
