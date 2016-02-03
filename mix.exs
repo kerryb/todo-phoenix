@@ -19,8 +19,19 @@ defmodule TodoPhoenix_2.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TodoPhoenix_2, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: applications(Mix.env)]
+  end
+
+  defp applications :test do
+    applications ++ [:hound]
+  end
+
+  defp applications _ do
+    applications
+  end
+
+  defp applications do
+     [:phoenix, :phoenix_html, :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +51,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:cowboy, ">= 0.0.0"},
       {:ex_machina, ">= 0.0.0", only: :test},
       {:gettext, ">= 0.0.0"},
+      {:hound, ">= 0.0.0"},
       {:postgrex, ">= 0.0.0"},
       {:white_bread, ">= 0.0.0", only: :test, app: false},
     ]
