@@ -22,30 +22,11 @@ config :logger, :console,
 config :phoenix, :template_engines,
   slim: PhoenixSlim.Engine
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
-
 # Configure phoenix generators
 config :phoenix, :generators,
   migration: true,
   binary_id: false
 
-if Mix.env == :test do
-  config :hound, driver: "phantomjs"
-
-  alias Dogma.Rule
-
-  config :dogma,
-    rule_set: Dogma.RuleSet.All,
-
-    exclude: [
-      ~r(\Alib/vendor/),
-    ],
-
-    override: %{
-      LineLength => [max_length: 120],
-      ModuleDoc => false,
-      ModuleName => false,
-    }
-end
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env}.exs"
