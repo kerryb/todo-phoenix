@@ -7,6 +7,7 @@ defmodule TodoPhoenix_2.Mixfile do
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+     test_coverage: [tool: Coverex.Task],
      preferred_cli_env: [
        dogma: :test,
        espec: :test,
@@ -55,6 +56,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:phoenix_live_reload, ">= 0.0.0", only: :dev},
 
       {:cowboy, ">= 0.0.0"},
+      {:coverex, ">= 0.0.0", only: :test, app: false},
       {:dogma, ">= 0.0.0", only: :test},
       {:espec_phoenix, ">= 0.0.0", only: :test, app: false},
       {:ex_machina, ">= 0.0.0", only: :test, app: false},
