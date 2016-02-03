@@ -16,7 +16,7 @@ defmodule TodoPhoenix_2.Router do
   scope "/", TodoPhoenix_2 do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ItemController, :index
   end
 
   # Other scopes may use custom stacks.
