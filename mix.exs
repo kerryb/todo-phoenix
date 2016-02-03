@@ -10,6 +10,7 @@ defmodule TodoPhoenix_2.Mixfile do
      preferred_cli_env: [
        "white_bread.run": :test,
        espec: :test,
+       tests: :test,
      ],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -68,7 +69,10 @@ defmodule TodoPhoenix_2.Mixfile do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    ["ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-     "ecto.reset": ["ecto.drop", "ecto.setup"]]
+    [
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "tests": ["espec", "white_bread.run"],
+    ]
   end
 end
