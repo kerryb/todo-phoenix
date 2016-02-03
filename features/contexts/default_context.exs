@@ -6,14 +6,14 @@ defmodule TodoPhoenix_2.TodoContext do
   alias TodoPhoenix_2.Item
 
   feature_starting_state fn  ->
-    endpoint_config =
-      Application.get_env(:todo_phoenix_2, TodoPhoenix_2.Endpoint)
+    endpoint_config = :todo_phoenix_2
+      |> Application.get_env(TodoPhoenix_2.Endpoint)
       |> Keyword.put(:server, true)
       |> Keyword.put(:port, 4001)
     :ok = Application.put_env(:todo_phoenix_2, TodoPhoenix_2.Endpoint, endpoint_config)
     :ok = Application.stop(:todo_phoenix_2)
     :ok = Application.start(:todo_phoenix_2)
-    
+
     %{}
   end
 

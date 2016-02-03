@@ -30,4 +30,19 @@ config :phoenix, :generators,
 
 if Mix.env == :test do
   config :hound, driver: "phantomjs"
+
+  alias Dogma.Rule
+
+  config :dogma,
+    rule_set: Dogma.RuleSet.All,
+
+    exclude: [
+      ~r(\Alib/vendor/),
+    ],
+
+    override: %{
+      LineLength => [max_length: 120],
+      ModuleDoc => false,
+      ModuleName => false,
+    }
 end

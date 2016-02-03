@@ -8,8 +8,9 @@ defmodule TodoPhoenix_2.Mixfile do
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      preferred_cli_env: [
-       "white_bread.run": :test,
+       dogma: :test,
        espec: :test,
+       "white_bread.run": :test,
        tests: :test,
      ],
      build_embedded: Mix.env == :prod,
@@ -53,6 +54,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:phoenix_live_reload, ">= 0.0.0", only: :dev},
 
       {:cowboy, ">= 0.0.0"},
+      {:dogma, ">= 0.0.0", only: :test},
       {:espec_phoenix, ">= 0.0.0", only: :test, app: false},
       {:ex_machina, ">= 0.0.0", only: :test, app: false},
       {:gettext, ">= 0.0.0"},
@@ -72,7 +74,7 @@ defmodule TodoPhoenix_2.Mixfile do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "tests": ["espec", "white_bread.run"],
+      "tests": ["dogma", "espec", "white_bread.run"],
     ]
   end
 end
