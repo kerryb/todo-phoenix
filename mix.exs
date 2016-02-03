@@ -51,6 +51,7 @@ defmodule TodoPhoenix_2.Mixfile do
       {:phoenix, ">= 0.0.0"},
       {:phoenix_ecto, ">= 0.0.0"},
       {:phoenix_html, ">= 0.0.0"},
+      {:phoenix_slim, ">= 0.0.0"},
       {:phoenix_live_reload, ">= 0.0.0", only: :dev},
 
       {:cowboy, ">= 0.0.0"},

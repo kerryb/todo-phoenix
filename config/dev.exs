@@ -20,7 +20,7 @@ config :todo_phoenix_2, TodoPhoenix_2.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
+      ~r{web/templates/.*(slim|eex)$}
     ]
   ]
 
