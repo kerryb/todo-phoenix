@@ -12,4 +12,4 @@ are to replace what I'm used to in Rubyland. Specifically:
 * Phoenix slim
 * Coverex
 
-[http://www.kerrybuckley.org/2016/02/06/phoenix-ecosystem-for-rails-developers/](Blog post)
+[Blog post](http://www.kerrybuckley.org/2016/02/06/phoenix-ecosystem-for-rails-developers/)
